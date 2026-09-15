@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 2.16: formulario de retroalimentación sobre la visita al campus -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 2.16</title>
+    </head>
+
+    <body>
+        <h1>Retroalimentación de la visita al campus</h1>
+
+        <form method = "post" action = "http://www.deitel.com">
+
+            <p><label>Nombre:
+                <input name = "nombre" type = "text" size = "25">
+            </label></p>
+
+            <p><label>Correo electrónico:
+                <input name = "email" type = "text" size = "25">
+            </label></p>
+
+            <p>
+                <strong>¿Qué fue lo que más le gustó del campus?</strong><br>
+
+                <label>Campus
+                    <input name = "gusto" type = "checkbox" value = "Campus"></label>
+                <label>Estudiantes
+                    <input name = "gusto" type = "checkbox" value = "Estudiantes"></label>
+                <label>Ubicación
+                    <input name = "gusto" type = "checkbox" value = "Ubicacion"></label>
+                <label>Ambiente
+                    <input name = "gusto" type = "checkbox" value = "Ambiente"></label>
+                <label>Dormitorios
+                    <input name = "gusto" type = "checkbox" value = "Dormitorios"></label>
+                <label>Deportes
+                    <input name = "gusto" type = "checkbox" value = "Deportes"></label>
+            </p>
+
+            <p>
+                <strong>¿Cómo se enteró de la universidad?</strong><br>
+
+                <label>Amigos
+                    <input name = "comosupo" type = "radio" value = "Amigos" checked></label>
+                <label>Televisión
+                    <input name = "comosupo" type = "radio" value = "Television"></label>
+                <label>Internet
+                    <input name = "comosupo" type = "radio" value = "Internet"></label>
+                <label>Otro
+                    <input name = "comosupo" type = "radio" value = "Otro"></label>
+            </p>
+
+            <p><label>Comentarios adicionales:<br>
+                <textarea name = "comentarios" rows = "4" cols = "40"></textarea>
+            </label></p>
+
+            <p>
+                <input type = "submit" value = "Enviar">
+                <input type = "reset" value = "Restablecer">
+            </p>
+        </form>
+    </body>
+</html>
