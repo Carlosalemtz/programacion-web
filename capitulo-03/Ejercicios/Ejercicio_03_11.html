@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<!-- Internet y World Wide Web: Cómo programar, 5ta ed., Deitel -->
+<!-- Ejercicio 3.11 -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 3.11</title>
+   </head>
+
+   <body>
+      <header>
+         <h1>3.2.1 El tipo de input color</h1>
+      </header>
+
+      <section id = "1">
+         <nav>
+            <h2>Enlaces rápidos</h2>
+            <ul>
+               <li><a href = "#1">El tipo de input color</a></li>
+               <li><a href = "#2">El atributo autofocus</a></li>
+               <li><a href = "#3">Validación</a></li>
+            </ul>
+         </nav>
+
+         <p>
+            El tipo de input <strong>color</strong> (Fig. 3.1; líneas 20&ndash;21)
+            permite al usuario introducir un color. Opera muestra un
+            control selector de color que presenta el color
+            predeterminado (negro) con una flecha hacia abajo que, al
+            hacer clic en ella, despliega una lista con 20 colores
+            básicos (Fig. 3.2). El usuario puede seleccionar un color o
+            hacer clic en el botón Otro... para elegir entre colores
+            básicos adicionales o crear un color personalizado.
+            Al momento de escribir esto, la mayoría de los navegadores
+            representan el tipo de input color como un campo de texto en
+            el que el usuario puede escribir un código hexadecimal.
+         </p>
+         <figure>
+            <hr>
+            <img src = "Imagenes/OperaColorInput.png" alt = "control selector de color"><hr>
+            <figcaption>
+               <strong>Fig. 3.2</strong>
+                  Introducir un color en Opera con un control selector de color.
+            </figcaption>
+         </figure>
+      </section>
+
+      <section id = "2">
+         <em>El atributo <strong>autofocus</strong></em>
+         <p>
+            El atributo <strong>autofocus</strong> (Fig. 3.1; línea 20)&mdash;un
+            atributo opcional que puede usarse en un solo elemento input
+            de un formulario&mdash;le da automáticamente el foco a ese
+            elemento input, lo que permite al usuario empezar a escribir
+            en él de inmediato. La figura 3.3 muestra autofocus en el
+            elemento color&mdash;el primer elemento input de nuestro
+            formulario&mdash;tal como lo representa Chrome. No es
+            necesario incluir autofocus en tus formularios.
+         </p>
+         <figure>
+            <hr>
+            <img src = "Imagenes/autofocus.png" alt = "demostración de autofocus"><hr>
+            <figcaption>
+               <strong>Fig. 3.3</strong>
+                  Autofocus en el elemento input color usando Chrome.
+            </figcaption>
+         </figure>
+      </section>
+
+      <section id = "3">
+         <em>Validación</em>
+         <p>
+            Tradicionalmente ha sido difícil validar la entrada del
+            usuario, por ejemplo asegurar que una dirección de correo
+            electrónico, una URL, una fecha o una hora se escriban en el
+            formato correcto. Los nuevos tipos de input de HTML5 se
+            autovalidan del lado del cliente, lo que elimina la
+            necesidad de agregar código JavaScript complicado a tus
+            páginas web para validar la entrada del usuario, reduce la
+            cantidad de datos inválidos enviados y, en consecuencia,
+            disminuye el tráfico de Internet entre el servidor y el
+            cliente para corregir entradas inválidas.
+            Cuando un usuario introduce datos en un formulario y lo
+            envía (en este ejemplo, al hacer clic en el botón Enviar),
+            el navegador revisa de inmediato los elementos
+            autovalidables para asegurarse de que los datos sean
+            correctos. Por ejemplo, si un usuario escribe un valor
+            hexadecimal de color incorrecto en un navegador que
+            representa los elementos color como campo de texto (por
+            ejemplo, Chrome), aparecerá un globo que señala al elemento
+            e indica que se introdujo un valor inválido (Fig. 3.4). La
+            figura 3.5 enumera cada uno de los nuevos tipos de input de
+            HTML5 y proporciona ejemplos de los formatos correctos que
+            se requieren para que cada tipo de dato sea válido.
+         </p>
+         <figure>
+            <hr>
+            <img src = "Imagenes/selfvalidationChrome.png" alt = "validación de entrada"><hr>
+            <figcaption>
+               <strong>Fig. 3.4</strong>
+                  Validación de una entrada de color en Chrome.
+            </figcaption>
+         </figure>
+         <details>
+            <summary><strong>Fig. 3.5 Tipos de input autovalidables.</strong></summary>
+            <table border = "1">
+               <thead>
+                  <th>tipo de input</th>
+                  <th>Formato</th>
+               </thead>
+               <tr>
+                  <td>color</td>
+                  <td>Código hexadecimal</td>
+               </tr>
+               <tr>
+                  <td>date</td>
+                  <td>aaaa-mm-dd</td>
+               </tr>
+               <tr>
+                  <td>datetime</td>
+                  <td>aaaa-mm-dd</td>
+               </tr>
+               <tr>
+                  <td>datetime-local</td>
+                  <td>aaaa-mm-ddThh:mm</td>
+               </tr>
+               <tr>
+                  <td>month</td>
+                  <td>aaaa-mm</td>
+               </tr>
+               <tr>
+                  <td>number</td>
+                  <td>Cualquier valor numérico</td>
+               </tr>
+               <tr>
+                  <td>email</td>
+                  <td>nombre@dominio.com</td>
+               </tr>
+               <tr>
+                  <td>url</td>
+                  <td>http://www.nombrededominio.com</td>
+               </tr>
+               <tr>
+                  <td>time</td>
+                  <td>hh:mm</td>
+               </tr>
+               <tr>
+                  <td>week</td>
+                  <td>aaaa-Wnn</td>
+               </tr>
+            </table>
+         </details>
+      </section>
+
+      <footer>
+         <h6>&copy;<a href = "http://www.freecodecamp.com/aminukano">Aminu Kano</a></h6>
+
+         <address>Contáctame en <a href = "mailto:aminukano585@gmail.com">
+            aminukano585@gmail.com</a>
+         </address>
+      </footer>
+   </body>
+</html>

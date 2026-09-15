@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<!-- Internet y World Wide Web: Cómo programar, 5ta ed., Deitel -->
+<!-- Ejercicio 3.6 -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 3.6</title>
+   </head>
+
+   <!--<body>
+      1 <meter
+         min = "1"
+         max = "10"
+         value = "7">
+      </meter> 10
+
+      <p>
+         <details>
+            <summary>Resultados de la encuesta</summary>
+            <p>
+               En una encuesta realizada por los estudiantes para calificar la
+               comida de la cafetería en una escala del 1 al 10, los resultados
+               anteriores muestran que la calificación promedio fue de 7 de 10.
+            </p>
+         </details>
+      </p>
+
+      <p><label>Nombre
+            <input type = "text" id = "firstName" placeholder = "Nombre"
+               autofocus />
+         </label>
+      </p>
+
+      <form method = "post" autocomplete = "on">
+         <p><label for = "txtList">Estado
+            <input type = "text" id = "txtList" placeholder = "Selecciona un estado"
+               list = "states" />
+            <datalist id = "states">
+               <option value = "Kano">
+               <option value = "Kaduna">
+               <option value = "Jigawa">
+               <option value = "Katsina">
+               <option value = "Jos">
+            </datalist>
+            </label>
+         </p>
+
+         <input type = "submit" value = "Enviar">
+      </form>
+
+      1<input type = "range" id = "rangeofvalues"
+         min = "1"
+         max = "100"
+         step = "1"
+         value = "50" />100
+
+      <p>Se pidió a los estudiantes calificar la comida de la cafetería
+         <mark>en una escala del 1 al 100. El resultado promedio fue 7.</mark></p>
+   </body>-->
+   <body>
+      <h1>Formulario de registro</h1>
+
+      <form method = "post" action = "aminukano585@gmail.com" autocomplete = "on">
+         <input type = "hidden" name = "recipient"
+            value = "aminukano585@gmail.com">
+         <input type = "hidden" name = "subject"
+            value = "Formulario de registro">
+         <input type = "hidden" name = "redirect"
+            value = "exe03-06.html">
+
+         <!-- Los siguientes input insertan campos de texto -->
+         <p><label>Nombre:
+            <input type = "text" id = "firstName"
+               placeholder = "Escribe aquí tu nombre">
+            </label>
+         </p>
+
+         <p><label>Apellido:
+            <input type = "text" id = "lastName"
+               placeholder = "Escribe aquí tu apellido">
+            </label>
+         </p>
+
+         <p><label>Correo electrónico:
+            <input type = "email" id = "email"
+               placeholder = "Escribe aquí tu correo electrónico">
+            </label>
+         </p>
+
+         <details>
+            <summary>Pregunta opcional de la encuesta</summary>
+            <p>
+               <strong>¿En qué año de la universidad estás actualmente?</strong><br>
+               <label>Primer año
+                  <input name = "year" type = "radio" value = "freshman"
+                     checked></label>
+               <label>Segundo año
+                  <input name = "year" type = "radio" value = "sophomore"></label>
+               <label>Penúltimo año
+                  <input name = "year" type = "radio" value = "penultimate"></label>
+               <label>Último año
+                  <input name = "year" type = "radio" value = "final"></label>
+            </p>
+         </details>
+
+         <p>
+            <input type = "submit" value = "Enviar">
+            <input type = "reset" value = "Limpiar">
+         </p>
+      </form>
+   </body>
+</html>

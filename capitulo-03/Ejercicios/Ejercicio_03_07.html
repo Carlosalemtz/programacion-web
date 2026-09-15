@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!-- Internet y World Wide Web: Cómo programar, 5ta ed., Deitel -->
+<!-- Ejercicio 3.7 -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 3.7</title>
+   </head>
+
+   <body>
+      <form method = "post" autocomplete = "on">
+         <!-- elementos ocultos que se envían al servidor -->
+         <input name = "recipient" type = "hidden"
+            value = "aminukano585@gmail.com">
+         <input name = "subject" type = "hidden"
+            value = "Formulario de búsqueda">
+         <input name = "redirect" type = "hidden"
+            value = "exe03-07.html">
+
+         <p><label>Buscar:
+            <input type = "search" id = "searchBar"
+               placeholder = "Escribe tu consulta de búsqueda">
+            </label>
+         </p>
+
+         <p>
+            <input type = "submit" value = "Enviar">
+            <input type = "reset" value = "Limpiar">
+         </p>
+      </form>
+   </body>
+</html>

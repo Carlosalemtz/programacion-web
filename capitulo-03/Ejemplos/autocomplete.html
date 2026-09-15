@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!-- Fig. 3.20: autocomplete.html -->
+<!-- El nuevo atributo autocomplete y el elemento datalist de HTML5. -->
+<html lang = "es">
+   <head>
+      <meta charset="utf-8">
+      <title>El nuevo atributo autocomplete y el elemento datalist de HTML5</title>
+   </head>
+
+   <body>
+      <h1>Demostración de autocomplete y datalist</h1>
+      <p>Este formulario demuestra el nuevo atributo autocomplete
+         y el elemento datalist de HTML5.
+      </p>
+
+      <!-- activar autocomplete -->
+      <form method = "post" autocomplete = "on">
+         <p><label>Nombre:
+            <input type = "text" id = "firstName"
+               placeholder = "Nombre" /> (Nombre)
+            </label></p>
+         <p><label>Apellido:
+            <input type = "text" id = "lastName"
+               placeholder = "Apellido" /> (Apellido)
+            </label></p>
+         <p><label>Correo electrónico:
+            <input type = "email" id = "email"
+               placeholder = "nombre@dominio.com" /> (nombre@dominio.com)
+            </label></p>
+         <p><label for = "txtList">Mes de nacimiento:
+            <input type = "text" id = "txtList"
+               placeholder = "Selecciona un mes" list = "months" />
+            <datalist id = "months">
+               <option value = "Enero">
+               <option value = "Febrero">
+               <option value = "Marzo">
+               <option value = "Abril">
+               <option value = "Mayo">
+               <option value = "Junio">
+               <option value = "Julio">
+               <option value = "Agosto">
+               <option value = "Septiembre">
+               <option value = "Octubre">
+               <option value = "Noviembre">
+               <option value = "Diciembre">
+            </datalist>
+         </label></p>
+         <p><input type = "submit" value = "Enviar" />
+            <input type = "reset" value = "Limpiar" /></p>
+      </form>
+   </body>
+</html>
+

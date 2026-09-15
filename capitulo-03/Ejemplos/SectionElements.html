@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<!-- Fig. 3.18: SectionElements.html -->
+<!-- Nuevos elementos de sección de HTML5. -->
+<html lang = "es">
+   <head>
+      <meta charset="utf-8">
+      <title>Nuevos elementos de sección de HTML5</title>
+   </head>
+
+   <body>
+      <header> <!-- el elemento header crea un encabezado para la página -->
+         <img src = "Imagenes/deitellogo.png" alt = "Logo de Deitel" />
+         <h1>Bienvenido a Deitel Buzz Online</h1>
+
+         <!-- el elemento time inserta una fecha y/u hora -->
+         <time>2012-01-17</time>
+
+      </header>
+
+      <section id = "1"> <!-- Inicia la sección 1 -->
+         <nav> <!-- el elemento nav agrupa los enlaces de navegación -->
+            <h2>Publicaciones recientes</h2>
+            <ul>
+               <li><a href = "http://www.deitel.com/books/iw3htp5">
+                  Internet &amp; World Wide Web How to Program, 5/e</a></li>
+               <li><a href = "http://www.deitel.com/books/androidfp/">
+                  Android for Programmers: An App-Driven Approach</a>
+               </li>
+               <li><a href = "http://www.deitel.com/books/iphonefp">
+                  iPhone for Programmers: An App-Driven Approach</a></li>
+               <li><a href = "http://www.deitel.com/books/jhtp9/">
+                  Java How to Program, 9/e</a></li>
+               <li><a href = "http://www.deitel.com/books/cpphtp8/">
+                  C++ How to Program, 8/e</a></li>
+               <li>
+                  <a href = "http://www.deitel.com/books/vcsharp2010htp">
+                     Visual C# 2010 How to Program, 4/e</a></li>
+               <li><a href = "http://www.deitel.com/books/vb2010htp">
+                  Visual Basic 2010 How to Program</a></li>
+            </ul>
+         </nav>
+      </section>
+
+      <section id = "2"> <!-- Inicia la sección 2 -->
+         <h2>Libros de la serie How to Program</h2>
+         <h3><em>Java How to Program, 9/e</em></h3>
+
+         <figure> <!-- el elemento figure describe la imagen -->
+            <img src = "Imagenes/jhtp.jpg" alt = "Java How to Program, 9/e" />
+
+            <!-- el elemento figcaption inserta el pie de figura -->
+            <figcaption>Portada de <em>Java How to Program, 9/e</em>.</figcaption>
+         </figure>
+
+         <!-- el elemento article representa contenido de otra fuente -->
+         <article>
+            <header>
+               <h5>Tomado de
+                  <em>
+                     <a href = "http://www.deitel.com/books/jhtp9/">
+                     Java How to Program, 9/e: </a>
+                  </em>
+               </h5>
+            </header>
+
+            <div>Entre sus características se incluyen:
+               <ul>
+                  <li>Amplia cobertura de los fundamentos, que incluye
+                     <!-- el elemento mark resalta el texto -->
+                     <mark>dos capítulos sobre instrucciones de control.</mark></li>
+                  <li>Énfasis en <mark>ejemplos del mundo real.</mark></li>
+                  <li><mark>Conjunto de ejercicios "Hacer la diferencia".</mark></li>
+                  <li>Introducción temprana a clases, objetos,
+                     métodos y cadenas.</li>
+                  <li>Manejo de excepciones integrado.</li>
+                  <li>Archivos, flujos y serialización de objetos.</li>
+                  <li>Secciones modulares opcionales sobre las
+                     características del lenguaje y de las bibliotecas
+                     del nuevo Java SE 7.</li>
+                  <li>Otros temas incluyen: recursividad, búsqueda,
+                     ordenamiento, colecciones genéricas, genéricos,
+                     estructuras de datos, applets, multimedia,
+                     multihilos, bases de datos/JDBC&trade;, desarrollo
+                     de aplicaciones web, servicios web y un caso de
+                     estudio opcional de diseño orientado a objetos de
+                     un cajero automático.</li>
+               </ul>
+
+               <!-- el elemento summary representa un resumen del -->
+               <!-- contenido del elemento details -->
+               <details>
+                  <summary>Comentarios sobre la edición reciente</summary>
+                  <ul>
+                     <li>Señala que el libro está actualizado al estado
+                        del arte de las tecnologías de Java y que sus
+                        explicaciones, profundas y muy claras, lo
+                        vuelven indispensable; destaca los ejercicios de
+                        conciencia social como algo realmente nuevo y
+                        refrescante.
+                        <strong>&mdash;Jos&eacute; Antonio
+                        Gonz&aacute;lez Seco, Parlamento de
+                        Andalucía</strong></li>
+                     <li>Comenta que ofrece a los programadores
+                        principiantes el beneficio de la experiencia
+                        acumulada durante muchos años de desarrollo de
+                        software.<strong>
+                        &mdash;Edward F. Gehringer, North Carolina
+                        State University</strong></li>
+                     <li>Observa que presenta buenas prácticas y
+                        metodologías de diseño desde el principio, y que
+                        es un excelente punto de partida para
+                        desarrollar aplicaciones Java robustas y de alta
+                        calidad.
+                        <strong>&mdash;Simon Ritter,
+                        Oracle Corporation</strong></li>
+                     <li>Describe un estilo conversacional de lectura
+                        fácil, con ejemplos de código claros que
+                        impulsan al lector a dominar Java.
+                        <strong>&mdash;Patty Kraft, San Diego State
+                        University</strong></li>
+                     <li>Lo califica como un gran libro de texto con
+                        numerosos ejemplos de distintos dominios de
+                        aplicación, excelente para un curso típico de
+                        CS1 o CS2.
+                        <strong>&mdash;William E. Duncan, Louisiana
+                        State University</strong></li>
+                  </ul>
+               </details>
+            </div>
+         </article>
+
+         <!-- el elemento aside representa contenido de una barra -->
+         <!-- lateral relacionado con el contenido que lo rodea -->
+         <aside>
+            Los navegadores no aplican formato al elemento aside.
+         </aside>
+
+         <h2>Libros de la serie Deitel Developer</h2>
+         <h3><em>Android for Programmers: An App-Driven Approach
+            </em></h3>
+            Haz clic <a href = "http://www.deitel.com/books/androidfp/">
+            aquí</a> para obtener más información o para pedir este libro.
+
+         <h2>Videos LiveLessons</h2>
+         <h3><em>C# 2010 Fundamentals LiveLessons</em></h3>
+         Haz clic <a href = "http://www.deitel.com/Books/LiveLessons/">
+         aquí</a> para obtener más información sobre nuestros videos LiveLessons.
+      </section>
+
+      <section id = "3"> <!-- Inicia la sección 3 -->
+         <h2>Resultados de nuestra encuesta en Facebook</h2>
+         <p>Si no fueras programador y estuvieras a punto de aprender
+            Java por primera vez, ¿preferirías un curso que enseñara
+            Java en el contexto del desarrollo de aplicaciones para
+            Android? Estos son los resultados de nuestra encuesta:</p>
+
+            <!-- el elemento meter representa una escala dentro de un rango -->
+            0 <meter min = "0"
+            max = "54"
+            value = "14"></meter> 54
+         <p>De los 54 participantes, 14 (en verde) preferirían
+         aprender Java en el contexto del desarrollo de aplicaciones para Android.</p>
+      </section>
+
+      <!-- el elemento footer representa el pie de una sección o -->
+      <!-- página, que por lo general contiene información como el -->
+      <!-- nombre del autor, los derechos de autor, etc. -->
+      <footer>
+         <!-- el elemento wbr indica el lugar adecuado para dividir -->
+         <!-- una palabra cuando el texto se ajusta a la línea -->
+         <h6>&copy; 1992-2012 Deitel &amp; Associ<wbr>ates, Inc.
+            Todos los derechos reservados.</h6>
+         <!-- el elemento address representa la información de -->
+         <!-- contacto de un documento o del elemento body o -->
+         <!-- article más cercano -->
+         <address>
+            Contáctanos en <a href = "mailto:deitel@deitel.com">
+            deitel@deitel.com</a>
+         </address>
+      </footer>
+   </body>
+</html>
+
+
+
