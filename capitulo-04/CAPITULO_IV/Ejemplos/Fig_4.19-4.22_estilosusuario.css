@@ -1,0 +1,20 @@
+/* Fig. 4.19: Fig_4.19-4.22_estilosusuario.css */
+/* Una hoja de estilo de usuario */
+body     { font-size: 20pt;
+           color: yellow;
+           background-color: Navy; }
+
+/*************************************************************************
+* (C) Copyright 1992-2012 by Deitel & Associates, Inc. and               *
+* Pearson Education, Inc. All Rights Reserved.                           *
+*                                                                        *
+* AVISO LEGAL: los autores y la editorial de este libro han hecho su     *
+* mejor esfuerzo al prepararlo. Dicho esfuerzo incluye el desarrollo,    *
+* la investigación y las pruebas de las teorías y los programas para     *
+* determinar su efectividad. Los autores y la editorial no ofrecen       *
+* ninguna garantía de ningún tipo, expresa o implícita, respecto de      *
+* estos programas ni de la documentación contenida en estos libros. Los  *
+* autores y la editorial no serán responsables en ningún caso por daños  *
+* incidentales o consecuentes relacionados con, o derivados de, el       *
+* suministro, el desempeño o el uso de estos programas.                  *
+*************************************************************************/
