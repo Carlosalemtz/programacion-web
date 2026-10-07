@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 5.11: Fusionar Cinco Imágenes -->
+<!-- Fusión de cinco imágenes con transiciones de opacidad. -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 5.11 - Fusionar Cinco Im&aacute;genes</title>
+      <style type = "text/css">
+         #galeria
+         {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+         }
+         #galeria img
+         {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* propiedades de transición pedidas en el ejercicio */
+            transition-property: opacity;
+            transition-duration: 3s;
+            transition-timing-function: linear;
+            -webkit-transition-property: opacity;
+            -webkit-transition-duration: 3s;
+            -webkit-transition-timing-function: linear;
+         }
+         /* al colocar el cursor encima se recorren las 5 imágenes en secuencia */
+         #galeria:hover .img5 { animation: fusion 15s infinite linear; }
+         #galeria:hover .img4 { animation: fusion 15s infinite linear 3s; }
+         #galeria:hover .img3 { animation: fusion 15s infinite linear 6s; }
+         #galeria:hover .img2 { animation: fusion 15s infinite linear 9s; }
+         @keyframes fusion
+         {
+            0%   { opacity: 1; }
+            20%  { opacity: 0; }
+            80%  { opacity: 0; }
+            100% { opacity: 1; }
+         }
+      </style>
+   </head>
+   <body>
+      <div id = "galeria">
+         <!-- cinco imágenes apiladas: img1 abajo, img5 arriba -->
+         <img class = "img1" src = "Imagenes/atardecer.jpg" alt = "Atardecer en las monta&ntilde;as">
+         <img class = "img2" src = "Imagenes/bosque.jpg" alt = "Bosque con niebla">
+         <img class = "img3" src = "Imagenes/aurora.jpg" alt = "Aurora nocturna">
+         <img class = "img4" src = "Imagenes/desierto.jpg" alt = "Dunas del desierto">
+         <img class = "img5" src = "Imagenes/lago.jpg" alt = "Lago al amanecer">
+      </div>
+   </body>
+</html>

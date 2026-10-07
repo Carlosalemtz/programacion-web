@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 5.15: Reflejo a la Derecha -->
+<!-- Reflejo a la derecha (funciona en navegadores basados en WebKit/Blink). -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 5.15 - Reflejo a la Derecha</title>
+      <style type = "text/css">
+         .con-reflejo
+         {
+            display: inline-block;
+            -webkit-box-reflect: right 20px linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0.4));
+         }
+         .con-reflejo img { width: 200px; }
+      </style>
+   </head>
+   <body>
+      <div class = "con-reflejo">
+         <img src = "Imagenes/lago.jpg" alt = "Lago al amanecer">
+      </div>
+   </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 5.10: Inclinar -->
+<!-- Modificación de la Fig. 5.13: inclinación en X y en Y. -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 5.10 - Inclinar</title>
+      <style type = "text/css">
+         .skew .cuadro
+         {
+            margin-left: 75px;
+            background: lavender;
+            height: 100px;
+            width: 200px;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 250%;
+            border: 3px solid indigo;
+            border-radius: 15px;
+            animation: inclinar 4s infinite alternate linear;
+         }
+         @keyframes inclinar
+         {
+            0%   { transform: skewY(0deg)  skewX(0deg); }
+            50%  { transform: skewY(30deg) skewX(0deg); }
+            100% { transform: skewY(30deg) skewX(30deg); }
+         }
+      </style>
+   </head>
+   <body>
+      <div class = "skew">
+         <div class = "cuadro">Inclinar Texto</div>
+      </div>
+   </body>
+</html>

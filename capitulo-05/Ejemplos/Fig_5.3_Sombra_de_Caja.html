@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.3: sombra_caja.html -->
+<!-- Creación de efectos de sombra en cajas con box-shadow. -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Sombra de Caja</title>
+      <style type = "text/css">
+         div
+         {
+            width: 200px;
+            height: 200px;
+            background-color: lightsalmon;
+            box-shadow: 20px 20px 40px #333;
+            float: left;
+            margin-right: 120px;
+            margin-top: 40px;
+         }
+         #caja2
+         {
+            box-shadow: -20px -20px 40px #333;
+         }
+         h2 { text-align: center; }
+      </style>
+   </head>
+   <body>
+      <div><h2>Sombra hacia abajo y a la derecha</h2></div>
+      <div id = "caja2"><h2>Sombra hacia arriba y a la izquierda</h2></div>
+   </body>
+</html>

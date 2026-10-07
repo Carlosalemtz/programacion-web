@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.9: reflejo.html -->
+<!-- Reflejos en CSS3 (funciona en navegadores basados en WebKit/Blink). -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Reflejo</title>
+      <style type = "text/css">
+         img { margin-right: 30px; }
+         img.abajo
+         {
+            -webkit-box-reflect: below 5px linear-gradient(transparent, white);
+         }
+         img.derecha
+         {
+            -webkit-box-reflect: right 5px linear-gradient(to left, transparent, white);
+         }
+      </style>
+   </head>
+   <body>
+      <img class = "abajo" src = "Imagenes/portada-web.png" width = "138" height = "181"
+         alt = "Portada del libro Programaci&oacute;n Web">
+      <img class = "derecha" src = "Imagenes/portada-web.png" width = "138" height = "181"
+         alt = "Portada del libro Programaci&oacute;n Web">
+   </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.11: animacion.html -->
+<!-- Animación en CSS3. -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Animaci&oacute;n</title>
+      <style type = "text/css">
+         img
+         {
+            position: relative;
+            -webkit-animation: moverimagen linear 8s 1s 2 alternate;
+            animation: moverimagen linear 8s 1s 2 alternate;
+         }
+         @-webkit-keyframes moverimagen
+         {
+            0%   {opacity: 0; left: 50px; top: 0px;}
+            25%  {opacity: 1; left: 0px; top: 50px;}
+            50%  {opacity: 0; left: 50px; top: 100px;}
+            75%  {opacity: 1; left: 100px; top: 50px;}
+            100% {opacity: 0; left: 50px; top: 0px;}
+         }
+         @keyframes moverimagen
+         {
+            0%   {opacity: 0; left: 50px; top: 0px;}
+            25%  {opacity: 1; left: 0px; top: 50px;}
+            50%  {opacity: 0; left: 50px; top: 100px;}
+            75%  {opacity: 1; left: 100px; top: 50px;}
+            100% {opacity: 0; left: 50px; top: 0px;}
+         }
+      </style>
+   </head>
+   <body>
+      <img src = "Imagenes/portada-web.png" width = "138" height = "181"
+         alt = "Portada del libro Programaci&oacute;n Web">
+   </body>
+</html>

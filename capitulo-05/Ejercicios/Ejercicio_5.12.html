@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 5.12: Texto Multicolumna -->
+<!-- Modificación de la Fig. 5.17: 2 columnas, regla más gruesa, subtítulo, autor e imagen. -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 5.12 - Texto Multicolumna</title>
+      <style type = "text/css">
+         p { margin: 0.9em 0em; }
+         .autor
+         {
+            font-style: italic;
+            color: #555;
+            margin-top: -10px;
+            margin-bottom: 20px;
+         }
+         .multicolumna
+         {
+            /* 1. número de columnas cambiado a 2 */
+            -webkit-column-count: 2;
+            column-count: 2;
+            -webkit-column-gap: 30px;
+            column-gap: 30px;
+            /* 2. mayor grosor y nuevo color en column-rule */
+            -webkit-column-rule: 4px solid #d84315;
+            column-rule: 4px solid #d84315;
+         }
+         /* 3. imagen que flota dentro del texto */
+         .imagen-flotante
+         {
+            float: left;
+            width: 130px;
+            margin: 0 15px 10px 0;
+            border: 2px solid #333;
+            border-radius: 5px;
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <h1>Computadoras, hardware y software</h1>
+         <h2>Una introducci&oacute;n a la tecnolog&iacute;a actual</h2>
+         <p class = "autor">Por: Ale</p>
+      </header>
+      <div class = "multicolumna">
+         <img src = "Imagenes/portada-web.png" alt = "Portada del libro Programaci&oacute;n Web" class = "imagen-flotante">
+         <p>Una computadora es una m&aacute;quina capaz de recibir datos, procesarlos siguiendo instrucciones y entregar resultados. Hoy en d&iacute;a incluso un tel&eacute;fono econ&oacute;mico ejecuta millones de operaciones por segundo, algo impensable para quienes trabajaron con las primeras computadoras de la d&eacute;cada de 1940.</p>
+         <p>El software es el conjunto de programas que le indican al equipo qu&eacute; debe hacer. Quienes escriben esas instrucciones son los programadores, y el lenguaje que elijan influye en qu&eacute; tan f&aacute;cil resulta mantener y hacer crecer un sistema con el paso del tiempo.</p>
+         <p>El hardware, en cambio, es todo lo que se puede tocar: procesador, memoria, almacenamiento, teclado, pantalla y tarjetas de red. Gracias a la miniaturizaci&oacute;n, componentes que antes ocupaban habitaciones enteras hoy caben en un chip del tama&ntilde;o de una u&ntilde;a.</p>
+         <p>Los microprocesadores tambi&eacute;n viven dentro de objetos que no parecen computadoras: autom&oacute;viles, lavadoras, c&aacute;maras de seguridad, relojes y hasta termostatos. A esta idea se le conoce como sistemas embebidos y es una de las &aacute;reas de mayor crecimiento en la ingenier&iacute;a.</p>
+         <p>La Web naci&oacute; como una forma de compartir documentos y termin&oacute; convirti&eacute;ndose en una plataforma de aplicaciones. HTML da la estructura, CSS se encarga de la presentaci&oacute;n y JavaScript aporta el comportamiento de cada p&aacute;gina.</p>
+         <footer>
+            <em>&copy; 2026 Ale &ndash; Programaci&oacute;n Web, ITSX. Material de pr&aacute;ctica.</em>
+         </footer>
+      </div>
+   </body>
+</html>

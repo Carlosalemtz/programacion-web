@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.18: consultas_medios.html -->
+<!-- Uso de consultas de medios para dar formato a una página según el ancho del dispositivo. -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Consultas de Medios</title>
+      <meta name = "viewport" content = "width=device-width, initial-scale=1">
+      <style type = "text/css">
+         p { margin: 0.9em 0em; }
+         /* estilos para teléfonos con pantallas de 480px o más pequeñas */
+         @media screen and (max-width: 480px)
+         {
+            .multicolumna { column-count: 1; }
+         }
+         /* estilos para dispositivos con pantallas de 481px a 1024px */
+         @media only screen and (min-width: 481px) and (max-width: 1024px)
+         {
+            .multicolumna {
+               column-count: 2;
+               column-gap: 30px;
+               column-rule: 1px solid #1b3a6b; }
+         }
+         /* estilos para dispositivos con pantallas de 1025px o más */
+         @media only screen and (min-width: 1025px)
+         {
+            .multicolumna {
+               column-count: 3;
+               column-gap: 30px;
+               column-rule: 1px solid #1b3a6b; }
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <h1>Computadoras, hardware y software</h1>
+      </header>
+      <div class = "multicolumna">
+         <p>Una computadora es una m&aacute;quina capaz de recibir datos, procesarlos siguiendo instrucciones y entregar resultados. Hoy en d&iacute;a incluso un tel&eacute;fono econ&oacute;mico ejecuta millones de operaciones por segundo, algo impensable para quienes trabajaron con las primeras computadoras de la d&eacute;cada de 1940.</p>
+         <p>El software es el conjunto de programas que le indican al equipo qu&eacute; debe hacer. Quienes escriben esas instrucciones son los programadores, y el lenguaje que elijan influye en qu&eacute; tan f&aacute;cil resulta mantener y hacer crecer un sistema con el paso del tiempo.</p>
+         <p>El hardware, en cambio, es todo lo que se puede tocar: procesador, memoria, almacenamiento, teclado, pantalla y tarjetas de red. Gracias a la miniaturizaci&oacute;n, componentes que antes ocupaban habitaciones enteras hoy caben en un chip del tama&ntilde;o de una u&ntilde;a.</p>
+         <p>Los microprocesadores tambi&eacute;n viven dentro de objetos que no parecen computadoras: autom&oacute;viles, lavadoras, c&aacute;maras de seguridad, relojes y hasta termostatos. A esta idea se le conoce como sistemas embebidos y es una de las &aacute;reas de mayor crecimiento en la ingenier&iacute;a.</p>
+         <p>La Web naci&oacute; como una forma de compartir documentos y termin&oacute; convirti&eacute;ndose en una plataforma de aplicaciones. HTML da la estructura, CSS se encarga de la presentaci&oacute;n y JavaScript aporta el comportamiento de cada p&aacute;gina.</p>
+         <footer>
+            <em>&copy; 2026 Ale &ndash; Programaci&oacute;n Web, ITSX. Material de pr&aacute;ctica.</em>
+         </footer>
+      </div>
+   </body>
+</html>

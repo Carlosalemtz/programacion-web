@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 5.16: Texto en Columnas Adaptable -->
+<!-- Práctica de CSS3. -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 5.16 - Texto en Columnas Adaptable</title>
+      <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+      <style type = "text/css">
+         .mural
+         {
+            column-count: 3;
+            column-gap: 20px;
+            column-rule: 1px solid #999;
+         }
+         /* ajuste para dispositivos móviles (pantallas de 480px o menos) */
+         @media (max-width: 480px)
+         {
+            .mural { column-count: 1; }
+         }
+      </style>
+   </head>
+   <body>
+      <div class = "mural">
+         <p>Dise&ntilde;ar para la Web significa pensar en pantallas de todos los tama&ntilde;os. Una misma p&aacute;gina puede verse en un monitor grande, en una tableta o en un tel&eacute;fono.</p>
+         <p>Las consultas de medios permiten cambiar el estilo seg&uacute;n el ancho disponible. As&iacute;, el texto puede mostrarse en tres columnas en una computadora y en una sola en un celular.</p>
+         <p>Probar el dise&ntilde;o redimensionando la ventana del navegador es una forma r&aacute;pida de comprobar que cada punto de quiebre funciona como se espera.</p>
+      </div>
+   </body>
+</html>

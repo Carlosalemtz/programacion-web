@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.16: caja_flexible.html -->
+<!-- Módulo de diseño de Caja Flexible (flexbox). -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Modelo de dise&ntilde;o Caja Flexible</title>
+      <link href = "https://fonts.googleapis.com/css?family=Quicksand"
+         rel = "stylesheet" type = "text/css">
+      <style type = "text/css">
+         .flexbox
+         {
+            width: 600px;
+            height: 420px;
+            display: flex;
+            flex-direction: row;
+         }
+         .flexbox > div
+         {
+            transition: 1s ease-out;
+            border-radius: 10px;
+            border: 2px solid black;
+            width: 120px;
+            margin: 10px -10px 10px 0px;
+            padding: 20px;
+            box-shadow: 10px 10px 10px dimgrey;
+            background-color: whitesmoke;
+         }
+         .flexbox > div:hover { width: 200px; color: white; font-weight: bold; }
+         .flexbox > div:nth-child(1):hover { background-color: seagreen; }
+         .flexbox > div:nth-child(2):hover { background-color: royalblue; }
+         .flexbox > div:nth-child(3):hover { background-color: firebrick; }
+         .flexbox > div:nth-child(4):hover { background-color: darkorange; }
+         p { height: 250px; overflow: hidden; font-family: "Quicksand", sans-serif; }
+      </style>
+   </head>
+   <body>
+      <div class = "flexbox">
+         <div><img src = "Imagenes/icono-practica.png" alt = "Icono de buena pr&aacute;ctica">
+            <p>Las buenas pr&aacute;cticas muestran t&eacute;cnicas que ayudan a escribir programas m&aacute;s claros y f&aacute;ciles de mantener.</p></div>
+         <div><img src = "Imagenes/icono-tip.png" alt = "Icono de tip para prevenir errores">
+            <p>Los tips para prevenir errores sugieren c&oacute;mo detectar y evitar fallos antes de que lleguen a tus programas.</p></div>
+         <div><img src = "Imagenes/icono-error.png" alt = "Icono de error com&uacute;n">
+            <p>Los errores comunes advierten sobre los fallos que m&aacute;s cometen los estudiantes, para que no los repitas.</p></div>
+         <div><img src = "Imagenes/icono-ingenieria.png" alt = "Icono de observaci&oacute;n de ingenier&iacute;a">
+            <p>Las observaciones de ingenier&iacute;a resaltan decisiones de dise&ntilde;o que influyen en la construcci&oacute;n de sistemas grandes.</p></div>
+      </div>
+   </body>
+</html>

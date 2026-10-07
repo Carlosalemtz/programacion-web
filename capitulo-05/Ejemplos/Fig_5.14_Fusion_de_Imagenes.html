@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.14: fusion_imagenes.html -->
+<!-- Fusionar una imagen con otra mediante transiciones de CSS3. -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Fusionar Im&aacute;genes</title>
+      <style type = "text/css">
+         #portada
+         {
+            position: relative;
+            margin: 0 auto;
+            width: 240px;
+            height: 315px;
+         }
+         #portada img
+         {
+            position: absolute;
+            left: 0;
+            width: 240px;
+            -webkit-transition: opacity 4s ease-in-out;
+            transition: opacity 4s ease-in-out;
+         }
+         #portada img.arriba:hover
+            { opacity: 0; }
+      </style>
+   </head>
+   <body>
+      <div id = "portada">
+         <img class = "abajo" src = "Imagenes/portada-web.png" alt = "Portada de Programaci&oacute;n Web">
+         <img class = "arriba" src = "Imagenes/portada-css.png" alt = "Portada de CSS3 avanzado">
+      </div>
+   </body>
+</html>

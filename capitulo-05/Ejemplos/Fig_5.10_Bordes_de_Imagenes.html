@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.10: borde_imagen.html -->
+<!-- Estirar y repetir una imagen para crear un borde. -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Borde de Imagen</title>
+      <style type = "text/css">
+         div
+         {
+            border-width: 30px;
+            width: 234px;
+            padding: 20px 20px;
+            margin-bottom: 20px;
+         }
+         #estirar
+         {
+            -webkit-border-image: url(Imagenes/borde.png) 80 80 80 80 stretch;
+            border-image: url(Imagenes/borde.png) 80 80 80 80 stretch;
+         }
+         #repetir
+         {
+            -webkit-border-image: url(Imagenes/borde.png) 34% 34% repeat;
+            border-image: url(Imagenes/borde.png) 34% 34% repeat;
+         }
+      </style>
+   </head>
+   <body>
+      <h2>Bordes de Im&aacute;genes</h2>
+      <img src = "Imagenes/borde.png" alt = "Imagen usada para demostrar los bordes">
+      <div id = "estirar">Se estira la imagen del borde</div>
+      <div id = "repetir">Se repite la imagen del borde</div>
+   </body>
+</html>

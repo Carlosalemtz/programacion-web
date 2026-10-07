@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 5.9: Animación de un Cuadro -->
+<!-- Práctica de CSS3. -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 5.9 - Animaci&oacute;n de un Cuadro</title>
+      <style type = "text/css">
+         .cuadro-movil
+         {
+            width: 50px;
+            height: 50px;
+            background-color: rebeccapurple;
+            position: relative;
+            animation: recorrido 4s infinite;
+         }
+         @keyframes recorrido
+         {
+            0%   { top: 0px;   left: 0px; }
+            25%  { top: 0px;   left: 150px; }
+            50%  { top: 150px; left: 150px; }
+            75%  { top: 150px; left: 0px; }
+            100% { top: 0px;   left: 0px; }
+         }
+      </style>
+   </head>
+   <body>
+      <div class = "cuadro-movil"></div>
+   </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<!-- Fig. 5.8: multiples_fondos.html -->
+<!-- Múltiples imágenes de fondo en CSS3. -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>M&uacute;ltiples Fondos</title>
+      <style type = "text/css">
+         div.fondo
+         {
+            background-image: url(Imagenes/logo-itsx.png), url(Imagenes/mar.jpg);
+            background-position: bottom right, 100% center;
+            background-origin: border-box, content-box;
+            background-repeat: no-repeat, repeat;
+         }
+         div.contenido
+         {
+            padding: 10px 15px;
+            color: white;
+            font-size: 150%;
+         }
+      </style>
+   </head>
+   <body>
+      <div class = "fondo">
+      <div class = "contenido">
+         <p>El Instituto Tecnol&oacute;gico Superior de Xalapa (ITSX) es una instituci&oacute;n de
+            educaci&oacute;n superior tecnol&oacute;gica ubicada en Xalapa, Veracruz. Esta p&aacute;gina
+            forma parte de las pr&aacute;cticas de la materia de Programaci&oacute;n Web de la carrera
+            de Ingenier&iacute;a en Sistemas Computacionales, donde se estudian temas como HTML5,
+            CSS3, JavaScript, bases de datos y desarrollo de aplicaciones para la Web y
+            dispositivos m&oacute;viles.</p>
+      </div></div>
+   </body>
+</html>

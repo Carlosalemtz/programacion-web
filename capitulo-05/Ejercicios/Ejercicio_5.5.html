@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 5.5: Esquinas Redondeadas -->
+<!-- Práctica de CSS3. -->
+<html lang = "es">
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 5.5 - Esquinas Redondeadas</title>
+      <style type = "text/css">
+         .caja
+         {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+            border: 3px solid #222;
+         }
+         .r10  { border-radius: 10px;  background-color: khaki; }
+         .r50  { border-radius: 50px;  background-color: plum; }
+         .r100 { border-radius: 100px; background-color: lightseagreen; }
+      </style>
+   </head>
+   <body>
+      <div class = "caja r10"><strong>10px</strong></div>
+      <div class = "caja r50"><strong>50px</strong></div>
+      <div class = "caja r100"><strong>100px</strong></div>
+   </body>
+</html>
