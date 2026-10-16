@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 8.4: Ejercicio_8.4_encontrar_errores.html -->
+<!-- Encontrar los errores -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 8.4 - Encontrar los errores</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 8.4: Encontrar los errores</h1>
+      <p class = "enunciado">Encuentre el error en cada uno de los siguientes segmentos de código (puede haber más de un error).</p>
+      <h3>a)</h3>
+      <pre>For ( x = 100, x &gt;= 1, ++x )
+   document.writeln( x );</pre>
+      <div class = "respuesta"><b>Errores:</b> <code>For</code> debe escribirse en minúsculas; las partes del encabezado se separan con punto y coma, no con comas; y como el ciclo va de 100 a 1, la variable debe decrementarse (<code>--x</code>), si no el ciclo es infinito.
+      <pre>for ( x = 100; x &gt;= 1; --x )
+   document.writeln( x );</pre></div>
+
+      <h3>b)</h3>
+      <pre>switch ( valor % 2 )
+{
+   case 0:
+      document.writeln( "Entero par" );
+   case 1:
+      document.writeln( "Entero impar" );
+}</pre>
+      <div class = "respuesta"><b>Error:</b> falta <code>break</code> en el <code>case 0</code>, por lo que con un número par también se imprime "Entero impar".
+      <pre>switch ( valor % 2 )
+{
+   case 0:
+      document.writeln( "Entero par" );
+      break;
+   case 1:
+      document.writeln( "Entero impar" );
+}</pre></div>
+
+      <h3>c) Debe imprimir los enteros impares del 19 al 1</h3>
+      <pre>for ( x = 19; x &gt;= 1; x += 2 )
+   document.writeln( x );</pre>
+      <div class = "respuesta"><b>Error:</b> la variable debe decrementarse en 2, no incrementarse (ciclo infinito).
+      <pre>for ( x = 19; x &gt;= 1; x -= 2 )
+   document.writeln( x );</pre></div>
+
+      <h3>d) Debe imprimir los enteros pares del 2 al 100</h3>
+      <pre>contador = 2;
+do {
+   document.writeln( contador );
+   contador += 2;
+} While ( contador &lt; 100 );</pre>
+      <div class = "respuesta"><b>Errores:</b> <code>While</code> debe ir en minúsculas y la condición debe ser <code>&lt;= 100</code> para que también se imprima el 100.
+      <pre>contador = 2;
+do {
+   document.writeln( contador );
+   contador += 2;
+} while ( contador &lt;= 100 );</pre></div>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

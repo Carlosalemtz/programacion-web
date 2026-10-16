@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 8.11: Ejercicio_8.11_ventas_productos.html -->
+<!-- Ventas de un minorista en línea -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 8.11 - Ventas de un minorista en línea</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 8.11: Ventas de un minorista en línea</h1>
+      <p class = "enunciado">Precios: producto 1 = $2.98, 2 = $4.50, 3 = $9.98, 4 = $4.49, 5 = $6.87. Lea pares (número de producto, cantidad vendida), use un switch para el precio y muestre el valor total de ventas. Ciclo controlado por centinela: escriba -1 en el número de producto para terminar.</p>
+
+      <script>
+         var total = 0;
+         var producto, cantidad, precio;
+
+         document.writeln( "<table><tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th>Subtotal</th></tr>" );
+
+         producto = parseInt( window.prompt( "Número de producto (1-5, -1 para terminar):", "-1" ) );
+
+         while ( producto != -1 )
+         {
+            cantidad = parseInt( window.prompt( "Cantidad vendida del producto " + producto + ":", "1" ) );
+
+            switch ( producto )
+            {
+               case 1: precio = 2.98; break;
+               case 2: precio = 4.50; break;
+               case 3: precio = 9.98; break;
+               case 4: precio = 4.49; break;
+               case 5: precio = 6.87; break;
+               default:
+                  precio = 0;
+                  window.alert( "Producto inválido: " + producto );
+            } // fin de switch
+
+            if ( precio > 0 )
+            {
+               total += precio * cantidad;
+               document.writeln( "<tr><td>" + producto + "</td><td>" + cantidad + "</td><td>$" +
+                  precio.toFixed( 2 ) + "</td><td>$" + ( precio * cantidad ).toFixed( 2 ) + "</td></tr>" );
+            }
+
+            producto = parseInt( window.prompt( "Número de producto (1-5, -1 para terminar):", "-1" ) );
+         } // fin de while
+
+         document.writeln( "</table>" );
+         document.writeln( "<h2>Valor total de ventas: $" + total.toFixed( 2 ) + "</h2>" );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

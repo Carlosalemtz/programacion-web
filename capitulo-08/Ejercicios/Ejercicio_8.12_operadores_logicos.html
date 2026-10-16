@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 8.12: Ejercicio_8.12_operadores_logicos.html -->
+<!-- Operadores lógicos -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 8.12 - Operadores lógicos</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 8.12: Operadores lógicos</h1>
+      <p class = "enunciado">Suponga que i = 1, j = 2, k = 3 y m = 2. ¿Qué imprime cada instrucción? ¿Son necesarios los paréntesis en cada caso?</p>
+      <table>
+         <tr><th>Inciso</th><th>Expresión</th><th>Respuesta</th><th>JavaScript</th></tr>
+         <tbody id = "tabla"></tbody>
+      </table>
+      <div class = "respuesta">Los paréntesis externos sólo delimitan los argumentos de <code>writeln</code>. Dentro de las expresiones no hacen falta paréntesis extra porque los operadores relacionales y de igualdad tienen mayor precedencia que <code>&amp;&amp;</code> y <code>||</code>, excepto en el inciso g), donde los paréntesis de <code>!( k &gt; m )</code> sí son necesarios: sin ellos se aplicaría <code>!</code> sólo a <code>k</code>.</div>
+      <script>
+         var i = 1, j = 2, k = 3, m = 2;
+         var casos = [
+            [ "a)", "i == 1", "true", i == 1 ],
+            [ "b)", "j == 3", "false", j == 3 ],
+            [ "c)", "i >= 1 && j < 4", "true", i >= 1 && j < 4 ],
+            [ "d)", "m <= 99 && k < m", "false", m <= 99 && k < m ],
+            [ "e)", "j >= i || k == m", "true", j >= i || k == m ],
+            [ "f)", "k + m < j || 3 - j >= k", "false", k + m < j || 3 - j >= k ],
+            [ "g)", "!( k > m )", "false", !( k > m ) ] ];
+         var filas = "";
+
+         for ( var n = 0; n < casos.length; ++n )
+            filas += "<tr><td>" + casos[n][0] + "</td><td><code>" +
+               casos[n][1].replace( /&/g, "&amp;" ).replace( /</g, "&lt;" ).replace( />/g, "&gt;" ) +
+               "</code></td><td>" + casos[n][2] + "</td><td>" + casos[n][3] + "</td></tr>";
+
+         document.getElementById( "tabla" ).innerHTML = filas;
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

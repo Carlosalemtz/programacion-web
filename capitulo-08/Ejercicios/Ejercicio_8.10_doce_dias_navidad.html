@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 8.10: Ejercicio_8.10_doce_dias_navidad.html -->
+<!-- Canción "Los Doce Días de Navidad" -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 8.10 - Canción "Los Doce Días de Navidad"</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 8.10: Canción "Los Doce Días de Navidad"</h1>
+      <p class = "enunciado">Use estructuras de repetición y un switch para imprimir la canción tradicional "Los Doce Días de Navidad".</p>
+
+      <script>
+         var dia;
+         var estrofa;
+
+         for ( var i = 1; i <= 12; ++i )
+         {
+            switch ( i ) // ordinal del día
+            {
+               case 1: dia = "primer"; break;
+               case 2: dia = "segundo"; break;
+               case 3: dia = "tercer"; break;
+               case 4: dia = "cuarto"; break;
+               case 5: dia = "quinto"; break;
+               case 6: dia = "sexto"; break;
+               case 7: dia = "séptimo"; break;
+               case 8: dia = "octavo"; break;
+               case 9: dia = "noveno"; break;
+               case 10: dia = "décimo"; break;
+               case 11: dia = "undécimo"; break;
+               case 12: dia = "duodécimo"; break;
+            } // fin de switch
+
+            estrofa = "<p><b>El " + dia + " día de Navidad mi verdadero amor me regaló:</b><br>";
+
+            // switch sin break: cada día incluye los regalos de los días anteriores
+            switch ( i )
+            {
+               case 12: estrofa += "doce tamborileros tocando,<br>";
+               case 11: estrofa += "once gaiteros soplando,<br>";
+               case 10: estrofa += "diez señores saltando,<br>";
+               case 9: estrofa += "nueve damas bailando,<br>";
+               case 8: estrofa += "ocho doncellas ordeñando,<br>";
+               case 7: estrofa += "siete cisnes nadando,<br>";
+               case 6: estrofa += "seis gansas poniendo,<br>";
+               case 5: estrofa += "¡cinco anillos de oro!<br>";
+               case 4: estrofa += "cuatro pájaros cantando,<br>";
+               case 3: estrofa += "tres gallinas francesas,<br>";
+               case 2: estrofa += "dos tórtolas<br>";
+               case 1: estrofa += ( i == 1 ? "" : "y " ) + "una perdiz en un peral.";
+            } // fin de switch
+
+            document.writeln( estrofa + "</p>" );
+         } // fin de for
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

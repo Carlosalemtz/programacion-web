@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 8.5: Ejercicio_8.5_que_hace.html -->
+<!-- ¿Qué hace el programa? -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 8.5 - ¿Qué hace el programa?</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 8.5: ¿Qué hace el programa?</h1>
+      <p class = "enunciado">¿Qué es lo que hace el siguiente programa?</p>
+      <pre>document.writeln( "&lt;table&gt;" );
+
+for ( var i = 1; i &lt;= 10; i++ )
+{
+   document.writeln( "&lt;tr&gt;" );
+
+   for ( var j = 1; j &lt;= 5; j++ )
+      document.writeln( "&lt;td&gt;(" + i + ", " + j + ")&lt;/td&gt;" );
+
+   document.writeln( "&lt;/tr&gt;" );
+} // fin de for
+
+document.writeln( "&lt;/table&gt;" );</pre>
+      <div class = "respuesta"><b>Respuesta:</b> crea una tabla de 10 filas por 5 columnas; cada celda muestra el par (fila, columna), desde (1, 1) hasta (10, 5). El ciclo externo genera las filas y el interno las columnas de cada fila.</div>
+      <p><b>Ejecución:</b></p>
+      <script>
+         document.writeln( "<table>" );
+
+         for ( var i = 1; i <= 10; i++ )
+         {
+            document.writeln( "<tr>" );
+
+            for ( var j = 1; j <= 5; j++ )
+               document.writeln( "<td>(" + i + ", " + j + ")</td>" );
+
+            document.writeln( "</tr>" );
+         } // fin de for
+
+         document.writeln( "</table>" );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

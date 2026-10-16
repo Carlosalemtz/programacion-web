@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 8.13: Ejercicio_8.13_switch_valores.html -->
+<!-- Valores asignados por un switch -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 8.13 - Valores asignados por un switch</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 8.13: Valores asignados por un switch</h1>
+      <p class = "enunciado">¿Qué valores se asignan a x cuando k tiene valores de 1, 2, 3, 4 y 10?</p>
+      <pre>switch ( k )
+{
+   case 1:
+      break;
+   case 2:
+   case 3:
+      ++k;
+      break;
+   case 4:
+      --k;
+      break;
+   default:
+      k *= 3;
+} // fin de switch
+
+x = k;</pre>
+      <div class = "respuesta">k = 1 &rarr; x = 1 &nbsp;|&nbsp; k = 2 &rarr; x = 3 &nbsp;|&nbsp; k = 3 &rarr; x = 4 &nbsp;|&nbsp; k = 4 &rarr; x = 3 &nbsp;|&nbsp; k = 10 &rarr; x = 30</div>
+      <p><b>Comprobación:</b></p>
+      <script>
+         var valores = [ 1, 2, 3, 4, 10 ];
+
+         document.writeln( "<table><tr><th>k</th><th>x</th></tr>" );
+
+         for ( var n = 0; n < valores.length; ++n )
+         {
+            var k = valores[n];
+            var x;
+
+            switch ( k )
+            {
+               case 1:
+                  break;
+               case 2:
+               case 3:
+                  ++k;
+                  break;
+               case 4:
+                  --k;
+                  break;
+               default:
+                  k *= 3;
+            } // fin de switch
+
+            x = k;
+            document.writeln( "<tr><td>" + valores[n] + "</td><td>" + x + "</td></tr>" );
+         } // fin de for
+
+         document.writeln( "</table>" );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

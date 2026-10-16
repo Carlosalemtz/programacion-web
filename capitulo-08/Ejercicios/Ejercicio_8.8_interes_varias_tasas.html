@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 8.8: Ejercicio_8.8_interes_varias_tasas.html -->
+<!-- Interés compuesto con varias tasas -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 8.8 - Interés compuesto con varias tasas</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+      table.interes { width: 260px; display: inline-table; margin: 10px; background-color: lightblue; vertical-align: top; }
+      caption { font-weight: bold; padding: 4px; }
+      tr.filaimpar { background-color: white; }
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 8.8: Interés compuesto con varias tasas</h1>
+      <p class = "enunciado">Modifique el programa de interés compuesto (figura 8.6) para las tasas de 5, 6, 7, 8, 9 y 10 por ciento. Use un for para variar la tasa y una tabla separada para cada tasa.</p>
+
+      <script>
+         var principal = 1000.00;
+         var monto;
+
+         for ( var porcentaje = 5; porcentaje <= 10; ++porcentaje )
+         {
+            var tasa = porcentaje / 100;
+
+            document.writeln( "<table class = 'interes'>" );
+            document.writeln( "<caption>Tasa de interés: " + porcentaje + "%</caption>" );
+            document.writeln( "<thead><tr><th>Año</th><th>Monto en depósito</th></tr></thead><tbody>" );
+
+            for ( var anio = 1; anio <= 10; ++anio )
+            {
+               monto = principal * Math.pow( 1.0 + tasa, anio );
+
+               if ( anio % 2 !== 0 )
+                  document.writeln( "<tr class = 'filaimpar'><td>" + anio + "</td><td>" + monto.toFixed( 2 ) + "</td></tr>" );
+               else
+                  document.writeln( "<tr><td>" + anio + "</td><td>" + monto.toFixed( 2 ) + "</td></tr>" );
+            } // fin del for interno
+
+            document.writeln( "</tbody></table>" );
+         } // fin del for externo
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>
