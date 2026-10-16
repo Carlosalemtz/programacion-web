@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 9.30: Ejercicio_9.30_funcion_misterio.html -->
+<!-- ¿Qué hace la función misterio? -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 9.30 - ¿Qué hace la función misterio?</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.30: ¿Qué hace la función misterio?</h1>
+      <p class = "enunciado">¿Qué hace la siguiente función?</p>
+      <pre>// El parámetro b debe ser entero
+// positivo para evitar recursividad infinita
+function misterio( a, b )
+{
+   if ( b == 1 )
+      return a;
+   else
+      return a + misterio( a, b - 1 );
+}</pre>
+      <div class = "respuesta"><b>Respuesta:</b> calcula de forma recursiva el producto <b>a × b</b>, sumando <code>a</code> consigo mismo <code>b</code> veces. Por ejemplo, misterio( 4, 3 ) = 4 + 4 + 4 = 12.</div>
+      <p><b>Comprobación:</b></p>
+      <script>
+         function misterio( a, b )
+         {
+            if ( b == 1 )
+               return a;
+            else
+               return a + misterio( a, b - 1 );
+         }
+
+         document.writeln( "<p>misterio( 4, 3 ) = " + misterio( 4, 3 ) + "</p>" );
+         document.writeln( "<p>misterio( 7, 5 ) = " + misterio( 7, 5 ) + "</p>" );
+         document.writeln( "<p>misterio( 12, 10 ) = " + misterio( 12, 10 ) + "</p>" );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

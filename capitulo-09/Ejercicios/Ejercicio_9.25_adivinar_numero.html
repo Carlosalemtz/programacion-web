@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 9.25: Ejercicio_9.25_adivinar_numero.html -->
+<!-- Adivinar el número -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 9.25 - Adivinar el número</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.25: Adivinar el número</h1>
+      <p class = "enunciado">El programa elige un entero aleatorio entre 1 y 1000. El jugador escribe un intento y hace clic en el botón. Si es incorrecto se muestra "Demasiado alto. Intente de nuevo." o "Demasiado bajo. Intente de nuevo." y se borra el campo. Al acertar se muestra "¡Felicidades. Adivinó el número!" y se inicia otro juego.</p>
+      <form action = "#" id = "formulario">
+         <p>Adivine un número entre 1 y 1000
+            <input id = "intento" type = "number" min = "1" max = "1000">
+            <input type = "submit" value = "Enviar"></p>
+      </form>
+      <p id = "mensaje" style = "font-size: 1.3em"></p>
+      <script>
+         var numeroSecreto;
+
+         function nuevoJuego()
+         {
+            numeroSecreto = 1 + Math.floor( Math.random() * 1000 );
+         }
+
+         function verificar( evento )
+         {
+            evento.preventDefault();
+            var campo = document.getElementById( "intento" );
+            var intento = parseInt( campo.value );
+            var mensaje = document.getElementById( "mensaje" );
+
+            if ( isNaN( intento ) )
+               mensaje.innerHTML = "Escriba un número.";
+            else if ( intento > numeroSecreto )
+               mensaje.innerHTML = "Demasiado alto. Intente de nuevo.";
+            else if ( intento < numeroSecreto )
+               mensaje.innerHTML = "Demasiado bajo. Intente de nuevo.";
+            else
+            {
+               mensaje.innerHTML = "¡Felicidades. Adivinó el número! (" + numeroSecreto +
+                  ") Ya se eligió otro número, puede jugar de nuevo.";
+               nuevoJuego();
+            }
+
+            campo.value = "";
+            campo.focus();
+         } // fin de la función verificar
+
+         nuevoJuego();
+         document.getElementById( "formulario" ).addEventListener( "submit", verificar, false );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

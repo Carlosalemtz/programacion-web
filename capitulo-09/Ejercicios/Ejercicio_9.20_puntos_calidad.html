@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 9.20: Ejercicio_9.20_puntos_calidad.html -->
+<!-- Función puntosCalidad -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 9.20 - Función puntosCalidad</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.20: Función puntosCalidad</h1>
+      <p class = "enunciado">Escriba la función puntosCalidad que reciba el promedio de un estudiante y devuelva 4 si está entre 90 y 100, 3 entre 80 y 89, 2 entre 70 y 79, 1 entre 60 y 69 y 0 si es menor a 60. Lea el valor del usuario.</p>
+      <form action = "#">
+         <p><label>Promedio: <input id = "promedio" type = "number" min = "0" max = "100" step = "any"></label>
+            <input id = "botonCalcular" type = "button" value = "Calcular puntos"></p>
+      </form>
+      <p id = "resultado"></p>
+      <script>
+         function puntosCalidad( promedio )
+         {
+            if ( promedio >= 90 )
+               return 4;
+            else if ( promedio >= 80 )
+               return 3;
+            else if ( promedio >= 70 )
+               return 2;
+            else if ( promedio >= 60 )
+               return 1;
+            else
+               return 0;
+         } // fin de la función puntosCalidad
+
+         document.getElementById( "botonCalcular" ).addEventListener( "click", function()
+         {
+            var promedio = parseFloat( document.getElementById( "promedio" ).value );
+
+            if ( isNaN( promedio ) || promedio < 0 || promedio > 100 )
+               document.getElementById( "resultado" ).innerHTML = "Escriba un promedio entre 0 y 100.";
+            else
+               document.getElementById( "resultado" ).innerHTML =
+                  "Promedio " + promedio + " &rarr; <b>" + puntosCalidad( promedio ) + " puntos de calidad</b>";
+         }, false );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

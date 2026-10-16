@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 9.19: Ejercicio_9.19_primos.html -->
+<!-- Números primos -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 9.19 - Números primos</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.19: Números primos</h1>
+      <p class = "enunciado">a) Escriba una función que determine si un número es primo. b) Muestre todos los primos entre 1 y 10,000 en un &lt;textarea&gt;. c) Compare probar divisores hasta n/2 contra hacerlo sólo hasta la raíz cuadrada de n (Math.sqrt) y estime la mejora.</p>
+      <form action = "#">
+         <p><input id = "botonMitad" type = "button" value = "Probar hasta n / 2">
+            <input id = "botonRaiz" type = "button" value = "Probar hasta √n"></p>
+         <textarea id = "salida" rows = "12" cols = "80" readonly></textarea>
+      </form>
+      <p id = "estadisticas"></p>
+      <div class = "respuesta"><b>¿Por qué basta con √n?</b> Si n = a × b y ambos factores fueran mayores que √n, su producto sería mayor que n. Por lo tanto, todo número compuesto tiene al menos un divisor menor o igual que √n; si no hay ninguno hasta ahí, el número es primo. Así, para 10,000 sólo hay que probar divisores hasta 100 en lugar de hasta 5,000.</div>
+      <script>
+         var divisiones; // cuenta las divisiones realizadas
+
+         // determina si numero es primo; limite indica hasta dónde probar
+         function esPrimo( numero, usarRaiz )
+         {
+            if ( numero < 2 )
+               return false;
+
+            var limite = usarRaiz ? Math.sqrt( numero ) : numero / 2;
+
+            for ( var divisor = 2; divisor <= limite; ++divisor )
+            {
+               ++divisiones;
+               if ( numero % divisor == 0 )
+                  return false;
+            }
+
+            return true;
+         } // fin de la función esPrimo
+
+         function mostrarPrimos( usarRaiz )
+         {
+            var texto = "";
+            var cantidad = 0;
+            divisiones = 0;
+            var inicio = Date.now();
+
+            for ( var n = 1; n <= 10000; ++n )
+               if ( esPrimo( n, usarRaiz ) )
+               {
+                  texto += n + " ";
+                  ++cantidad;
+               }
+
+            var tiempo = Date.now() - inicio;
+            document.getElementById( "salida" ).value = texto;
+            document.getElementById( "estadisticas" ).innerHTML =
+               "<b>Método: hasta " + ( usarRaiz ? "√n" : "n / 2" ) + "</b> &mdash; " + cantidad +
+               " primos encontrados, " + divisiones.toLocaleString() + " divisiones, " + tiempo + " ms.";
+         } // fin de la función mostrarPrimos
+
+         document.getElementById( "botonMitad" ).addEventListener( "click", function() { mostrarPrimos( false ); }, false );
+         document.getElementById( "botonRaiz" ).addEventListener( "click", function() { mostrarPrimos( true ); }, false );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

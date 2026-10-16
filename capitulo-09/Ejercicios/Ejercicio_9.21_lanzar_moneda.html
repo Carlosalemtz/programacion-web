@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 9.21: Ejercicio_9.21_lanzar_moneda.html -->
+<!-- Lanzamiento de monedas -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 9.21 - Lanzamiento de monedas</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.21: Lanzamiento de monedas</h1>
+      <p class = "enunciado">Simule el lanzamiento de una moneda cada vez que el usuario haga clic en Lanzar. Cuente cuántas veces aparece cada lado. La función arrojar no recibe argumentos y devuelve false para cruz y true para cara.</p>
+      <p><img id = "moneda" src = "Imagenes/cara.png" alt = "moneda"></p>
+      <form action = "#">
+         <p><input id = "botonLanzar" type = "button" value = "Lanzar">
+            <input id = "botonCien" type = "button" value = "Lanzar 100 veces"></p>
+      </form>
+      <table>
+         <tr><th>Lado</th><th>Veces</th><th>Porcentaje</th></tr>
+         <tr><td>Cara</td><td id = "caras">0</td><td id = "pCaras">-</td></tr>
+         <tr><td>Cruz</td><td id = "cruces">0</td><td id = "pCruces">-</td></tr>
+      </table>
+      <script>
+         var caras = 0;
+         var cruces = 0;
+
+         // devuelve true para cara y false para cruz
+         function arrojar()
+         {
+            return Math.floor( Math.random() * 2 ) == 1;
+         } // fin de la función arrojar
+
+         function lanzar()
+         {
+            var imagen = document.getElementById( "moneda" );
+
+            if ( arrojar() )
+            {
+               ++caras;
+               imagen.src = "Imagenes/cara.png";
+               imagen.alt = "cara";
+            }
+            else
+            {
+               ++cruces;
+               imagen.src = "Imagenes/cruz.png";
+               imagen.alt = "cruz";
+            }
+
+            var total = caras + cruces;
+            document.getElementById( "caras" ).innerHTML = caras;
+            document.getElementById( "cruces" ).innerHTML = cruces;
+            document.getElementById( "pCaras" ).innerHTML = ( caras / total * 100 ).toFixed( 1 ) + "%";
+            document.getElementById( "pCruces" ).innerHTML = ( cruces / total * 100 ).toFixed( 1 ) + "%";
+         } // fin de la función lanzar
+
+         document.getElementById( "botonLanzar" ).addEventListener( "click", lanzar, false );
+         document.getElementById( "botonCien" ).addEventListener( "click", function()
+         {
+            for ( var i = 1; i <= 100; ++i )
+               lanzar();
+         }, false );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

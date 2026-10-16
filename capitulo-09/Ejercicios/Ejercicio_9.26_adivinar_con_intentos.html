@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 9.26: Ejercicio_9.26_adivinar_con_intentos.html -->
+<!-- Adivinar el número contando intentos -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 9.26 - Adivinar el número contando intentos</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.26: Adivinar el número contando intentos</h1>
+      <p class = "enunciado">Modifique el ejercicio 9.25 para contar los intentos. Si son menos de 10: "¡Conoce el secreto o tuvo suerte!"; si son exactamente 10: "¡Entonces sí conoce el secreto!"; si son más de 10: "¡Debería poder hacerlo mejor!". Explique por qué basta con 10 intentos.</p>
+      <form action = "#" id = "formulario">
+         <p>Adivine un número entre 1 y 1000
+            <input id = "intento" type = "number" min = "1" max = "1000">
+            <input type = "submit" value = "Enviar"></p>
+      </form>
+      <p id = "mensaje" style = "font-size: 1.3em"></p>
+      <p id = "intentos">Intentos: 0</p>
+      <div class = "respuesta"><b>¿Por qué 10 intentos son suficientes?</b> Con cada intento bien elegido (siempre a la mitad del rango que queda) se elimina la mitad de los números posibles: 1000 &rarr; 500 &rarr; 250 &rarr; 125 &rarr; 63 &rarr; 32 &rarr; 16 &rarr; 8 &rarr; 4 &rarr; 2 &rarr; 1. Como 2<sup>10</sup> = 1024 &ge; 1000, en 10 intentos o menos siempre se encuentra el número (búsqueda binaria).</div>
+      <script>
+         var numeroSecreto;
+         var intentos;
+
+         function nuevoJuego()
+         {
+            numeroSecreto = 1 + Math.floor( Math.random() * 1000 );
+            intentos = 0;
+         }
+
+         function verificar( evento )
+         {
+            evento.preventDefault();
+            var campo = document.getElementById( "intento" );
+            var intento = parseInt( campo.value );
+            var mensaje = document.getElementById( "mensaje" );
+
+            if ( isNaN( intento ) )
+               mensaje.innerHTML = "Escriba un número.";
+            else
+            {
+               ++intentos;
+
+               if ( intento > numeroSecreto )
+                  mensaje.innerHTML = "Demasiado alto. Intente de nuevo.";
+               else if ( intento < numeroSecreto )
+                  mensaje.innerHTML = "Demasiado bajo. Intente de nuevo.";
+               else
+               {
+                  var comentario;
+
+                  if ( intentos < 10 )
+                     comentario = "¡Conoce el secreto o tuvo suerte!";
+                  else if ( intentos == 10 )
+                     comentario = "¡Entonces sí conoce el secreto!";
+                  else
+                     comentario = "¡Debería poder hacerlo mejor!";
+
+                  mensaje.innerHTML = "¡Felicidades. Adivinó el número " + numeroSecreto + " en " +
+                     intentos + " intentos! " + comentario + " (Nuevo juego iniciado)";
+                  nuevoJuego();
+               }
+            }
+
+            document.getElementById( "intentos" ).innerHTML = "Intentos: " + intentos;
+            campo.value = "";
+            campo.focus();
+         } // fin de la función verificar
+
+         nuevoJuego();
+         document.getElementById( "formulario" ).addEventListener( "submit", verificar, false );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<!-- Fig. 9.13: Fig_9.13_cubo.html -->
+<!-- Ejercicio de alcance. -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Alcance</title>
+      <script>
+         var x;
+
+         function salida()
+         {
+            for ( x = 1; x <= 10; x++ )
+               document.getElementById( "resultados" ).innerHTML +=
+                  "<p>" + cubo( x ) + "</p>";
+         } // fin de la función salida
+
+         function cubo( y )
+         {
+            return y * y * y;
+         } // fin de la función cubo
+
+         window.addEventListener( "load", salida, false );
+      </script>
+   </head>
+   <body>
+      <!-- Nota: se usa innerHTML en lugar de document.writeln porque
+           writeln después del evento load reemplazaría el documento -->
+      <div id = "resultados"></div>
+   </body>
+</html>

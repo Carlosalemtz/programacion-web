@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 9.11: Ejercicio_9.11_enteros_aleatorios.html -->
+<!-- Enteros aleatorios en distintos rangos -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 9.11 - Enteros aleatorios en distintos rangos</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.11: Enteros aleatorios en distintos rangos</h1>
+      <p class = "enunciado">Escriba instrucciones que asignen enteros aleatorios a la variable n en los rangos indicados. (Cada fila muestra 10 valores generados con la instrucción).</p>
+      <table>
+         <tr><th>Rango</th><th>Instrucción</th><th>Ejemplo de 10 valores</th></tr>
+         <tbody id = "tabla"></tbody>
+      </table>
+      <p><button id = "otra">Generar de nuevo</button></p>
+      <script>
+         function fila( rango, instruccion, generar )
+         {
+            var valores = "";
+            for ( var i = 1; i <= 10; ++i )
+               valores += generar() + " ";
+            return "<tr><td>" + rango + "</td><td><code>" + instruccion + "</code></td><td>" + valores + "</td></tr>";
+         }
+
+         function generarTabla()
+         {
+            document.getElementById( "tabla" ).innerHTML =
+               fila( "a) 1 ≤ n ≤ 2", "n = 1 + Math.floor( Math.random() * 2 );", function() { return 1 + Math.floor( Math.random() * 2 ); } ) +
+               fila( "b) 1 ≤ n ≤ 100", "n = 1 + Math.floor( Math.random() * 100 );", function() { return 1 + Math.floor( Math.random() * 100 ); } ) +
+               fila( "c) 0 ≤ n ≤ 9", "n = Math.floor( Math.random() * 10 );", function() { return Math.floor( Math.random() * 10 ); } ) +
+               fila( "d) 1000 ≤ n ≤ 1112", "n = 1000 + Math.floor( Math.random() * 113 );", function() { return 1000 + Math.floor( Math.random() * 113 ); } ) +
+               fila( "e) -1 ≤ n ≤ 1", "n = -1 + Math.floor( Math.random() * 3 );", function() { return -1 + Math.floor( Math.random() * 3 ); } ) +
+               fila( "f) -3 ≤ n ≤ 11", "n = -3 + Math.floor( Math.random() * 15 );", function() { return -3 + Math.floor( Math.random() * 15 ); } );
+         }
+
+         generarTabla();
+         document.getElementById( "otra" ).addEventListener( "click", generarTabla, false );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

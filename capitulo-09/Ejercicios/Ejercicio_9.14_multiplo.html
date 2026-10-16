@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 9.14: Ejercicio_9.14_multiplo.html -->
+<!-- Función multiplo -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 9.14 - Función multiplo</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.14: Función multiplo</h1>
+      <p class = "enunciado">Escriba la función multiplo que determine si el segundo entero es múltiplo del primero (devuelve true o false). El formulario tiene dos campos de texto y un botón; se pueden probar varios pares.</p>
+      <form action = "#">
+         <p><label>Primer entero: <input id = "primero" type = "text"></label>
+            <label>Segundo entero: <input id = "segundo" type = "text"></label>
+            <input id = "botonProbar" type = "button" value = "Probar"></p>
+      </form>
+      <div id = "resultados"></div>
+      <script>
+         function multiplo( primero, segundo )
+         {
+            if ( primero == 0 )
+               return segundo == 0;
+
+            return segundo % primero == 0;
+         } // fin de la función multiplo
+
+         function probar()
+         {
+            var a = parseInt( document.getElementById( "primero" ).value );
+            var b = parseInt( document.getElementById( "segundo" ).value );
+
+            if ( isNaN( a ) || isNaN( b ) )
+            {
+               window.alert( "Escriba dos enteros" );
+               return;
+            }
+
+            document.getElementById( "resultados" ).innerHTML +=
+               "<p>" + b + ( multiplo( a, b ) ? " <b>es</b>" : " <b>no es</b>" ) + " múltiplo de " + a + "</p>";
+         } // fin de la función probar
+
+         document.getElementById( "botonProbar" ).addEventListener( "click", probar, false );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

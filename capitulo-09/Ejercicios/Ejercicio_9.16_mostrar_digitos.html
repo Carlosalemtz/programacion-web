@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 9.16: Ejercicio_9.16_mostrar_digitos.html -->
+<!-- Función mostrarDigitos -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 9.16 - Función mostrarDigitos</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.16: Función mostrarDigitos</h1>
+      <p class = "enunciado">a) Calcule la parte entera del cociente a / b. b) Calcule el residuo de a / b. c) Use (a) y (b) en la función mostrarDigitos, que recibe un entero entre 1 y 99999 y lo imprime como serie de dígitos separados por dos espacios. d) Llame a la función con un entero leído de un diálogo prompt.</p>
+      <div class = "respuesta">a) <code>cociente = Math.floor( a / b );</code><br>
+         b) <code>residuo = a % b;</code></div>
+      <script>
+         function cociente( a, b )
+         {
+            return Math.floor( a / b );
+         }
+
+         function residuo( a, b )
+         {
+            return a % b;
+         }
+
+         function mostrarDigitos( numero )
+         {
+            var divisor = 10000;
+            var salida = "";
+            var inicio = false;
+
+            while ( divisor >= 1 )
+            {
+               var digito = cociente( numero, divisor );
+
+               if ( digito != 0 || inicio || divisor == 1 )
+               {
+                  salida += digito + "&nbsp;&nbsp;";
+                  inicio = true;
+               }
+
+               numero = residuo( numero, divisor );
+               divisor = cociente( divisor, 10 );
+            } // fin de while
+
+            document.writeln( "<h2 style = 'font-family: monospace'>" + salida + "</h2>" );
+         } // fin de la función mostrarDigitos
+
+         var entero = parseInt( window.prompt( "Escriba un entero entre 1 y 99999:", "4562" ) );
+
+         while ( !( entero >= 1 && entero <= 99999 ) )
+            entero = parseInt( window.prompt( "Valor inválido. Escriba un entero entre 1 y 99999:", "4562" ) );
+
+         document.writeln( "<p>Número introducido: " + entero + "</p>" );
+         mostrarDigitos( entero );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

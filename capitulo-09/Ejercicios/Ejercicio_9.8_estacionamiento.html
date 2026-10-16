@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 9.8: Ejercicio_9.8_estacionamiento.html -->
+<!-- Cargos de estacionamiento -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 9.8 - Cargos de estacionamiento</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.8: Cargos de estacionamiento</h1>
+      <p class = "enunciado">Cuota mínima de $2 hasta tres horas; $0.50 adicionales por cada hora o fracción que exceda las tres horas; cargo máximo de $10.00 por 24 horas. Use un formulario para las horas de cada cliente, muestre el cargo del cliente actual y el total corriente de los recibos de ayer. Use la función calcularCargos.</p>
+      <form action = "#">
+         <p><label>Horas estacionado: <input id = "campoHoras" type = "number" min = "0" max = "24" step = "any"></label>
+            <input id = "botonCobrar" type = "button" value = "Calcular cargo"></p>
+      </form>
+      <table>
+         <thead><tr><th>Cliente</th><th>Horas</th><th>Cargo</th></tr></thead>
+         <tbody id = "clientes"></tbody>
+      </table>
+      <h2 id = "total">Total de recibos: $0.00</h2>
+      <script>
+         var totalRecibos = 0;
+         var numeroCliente = 0;
+
+         function calcularCargos( horas )
+         {
+            var cargo = 2.00;
+
+            if ( horas > 3 )
+               cargo += Math.ceil( horas - 3 ) * 0.50;
+
+            if ( cargo > 10.00 )
+               cargo = 10.00;
+
+            return cargo;
+         } // fin de la función calcularCargos
+
+         function cobrar()
+         {
+            var horas = parseFloat( document.getElementById( "campoHoras" ).value );
+
+            if ( isNaN( horas ) || horas <= 0 || horas > 24 )
+            {
+               window.alert( "Escriba un número de horas entre 0 y 24" );
+               return;
+            }
+
+            var cargo = calcularCargos( horas );
+            totalRecibos += cargo;
+            ++numeroCliente;
+
+            document.getElementById( "clientes" ).innerHTML += "<tr><td>" + numeroCliente +
+               "</td><td>" + horas + "</td><td>$" + cargo.toFixed( 2 ) + "</td></tr>";
+            document.getElementById( "total" ).innerHTML = "Total de recibos: $" + totalRecibos.toFixed( 2 );
+            document.getElementById( "campoHoras" ).value = "";
+         } // fin de la función cobrar
+
+         document.getElementById( "botonCobrar" ).addEventListener( "click", cobrar, false );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

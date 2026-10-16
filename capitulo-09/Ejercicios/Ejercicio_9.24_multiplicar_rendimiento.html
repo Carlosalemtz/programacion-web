@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 9.24: Ejercicio_9.24_multiplicar_rendimiento.html -->
+<!-- CAI que monitorea el rendimiento -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 9.24 - CAI que monitorea el rendimiento</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 9.24: CAI que monitorea el rendimiento</h1>
+      <p class = "enunciado">Modifique el ejercicio 9.23 para contar las respuestas correctas e incorrectas. Después de 10 preguntas calcule el porcentaje de respuestas correctas; si es menor al 75%, muestre "Pida ayuda adicional a su instructor" y reinicie el cuestionario para otro estudiante.</p>
+      <p id = "pregunta" style = "font-size: 1.6em; font-weight: bold"></p>
+      <form action = "#" id = "formulario">
+         <p><input id = "respuesta" type = "number">
+            <input id = "botonResponder" type = "submit" value = "Responder"></p>
+      </form>
+      <p id = "mensaje" style = "font-size: 1.3em"></p>
+      <p id = "marcador"></p>
+      <div id = "reporte"></div>
+      <script>
+         var numero1, numero2;
+         var correctas = 0, incorrectas = 0, preguntas = 0;
+         var primerIntento = true; // sólo cuenta el primer intento de cada pregunta
+         function respuestaCorrecta()
+         {
+            switch ( 1 + Math.floor( Math.random() * 4 ) )
+            {
+               case 1: return "¡Muy bien!";
+               case 2: return "¡Excelente!";
+               case 3: return "¡Buen trabajo!";
+               default: return "¡Siga así!";
+            }
+         } // fin de la función respuestaCorrecta
+
+         function respuestaIncorrecta()
+         {
+            switch ( 1 + Math.floor( Math.random() * 4 ) )
+            {
+               case 1: return "No. Intente de nuevo.";
+               case 2: return "Equivocado. Trate una vez más.";
+               case 3: return "No se dé por vencido.";
+               default: return "No. Siga intentando.";
+            }
+         } // fin de la función respuestaIncorrecta
+
+         function generarPregunta()
+         {
+            numero1 = 1 + Math.floor( Math.random() * 9 );
+            numero2 = 1 + Math.floor( Math.random() * 9 );
+            primerIntento = true;
+            document.getElementById( "pregunta" ).innerHTML =
+               "Pregunta " + ( preguntas + 1 ) + " de 10: ¿Cuánto es " + numero1 + " por " + numero2 + "?";
+            document.getElementById( "respuesta" ).value = "";
+            document.getElementById( "respuesta" ).focus();
+         } // fin de la función generarPregunta
+
+         function actualizarMarcador()
+         {
+            document.getElementById( "marcador" ).innerHTML =
+               "Correctas: " + correctas + " &nbsp; Incorrectas: " + incorrectas;
+         }
+
+         function verificar( evento )
+         {
+            evento.preventDefault();
+            var respuesta = parseInt( document.getElementById( "respuesta" ).value );
+            var mensaje = document.getElementById( "mensaje" );
+
+            if ( respuesta == numero1 * numero2 )
+            {
+               if ( primerIntento )
+                  ++correctas;
+               ++preguntas;
+               mensaje.innerHTML = respuestaCorrecta();
+               mensaje.style.color = "green";
+
+               if ( preguntas == 10 )
+                  terminarCuestionario();
+               else
+                  generarPregunta();
+            }
+            else
+            {
+               if ( primerIntento )
+                  ++incorrectas;
+               primerIntento = false;
+               mensaje.innerHTML = respuestaIncorrecta();
+               mensaje.style.color = "red";
+               document.getElementById( "respuesta" ).select();
+            }
+
+            actualizarMarcador();
+         } // fin de la función verificar
+
+         function terminarCuestionario()
+         {
+            var porcentaje = correctas / 10 * 100;
+            var reporte = "<p><b>Resultado del estudiante: " + porcentaje + "% correctas al primer intento.</b></p>";
+
+            if ( porcentaje < 75 )
+               reporte += "<p style = 'color: red'><b>Pida ayuda adicional a su instructor</b></p>";
+            else
+               reporte += "<p style = 'color: green'><b>¡Felicidades, buen desempeño!</b></p>";
+
+            reporte += "<p>El cuestionario se reinició para el siguiente estudiante.</p>";
+            document.getElementById( "reporte" ).innerHTML = reporte;
+
+            correctas = 0;
+            incorrectas = 0;
+            preguntas = 0;
+            generarPregunta();
+         } // fin de la función terminarCuestionario
+
+         document.getElementById( "formulario" ).addEventListener( "submit", verificar, false );
+         actualizarMarcador();
+         generarPregunta();
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>
