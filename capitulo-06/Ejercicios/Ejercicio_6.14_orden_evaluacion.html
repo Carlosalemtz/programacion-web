@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 6.14: Ejercicio_6.14_orden_evaluacion.html -->
+<!-- Orden de evaluación de operadores -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 6.14 - Orden de evaluación de operadores</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 6.14: Orden de evaluación de operadores</h1>
+      <p class = "enunciado">Indique el orden de evaluación de los operadores en cada instrucción y muestre el valor de x después de ejecutarla.</p>
+      <div class = "respuesta">a) <code>x = 7 + 3 * 6 / 2 - 1;</code><br>
+         3 * 6 = 18 &rarr; 18 / 2 = 9 &rarr; 7 + 9 = 16 &rarr; 16 - 1 = 15 &rarr; <b>x = 15</b></div>
+      <div class = "respuesta">b) <code>x = 2 % 2 + 2 * 2 - 2 / 2;</code><br>
+         2 % 2 = 0 &rarr; 2 * 2 = 4 &rarr; 2 / 2 = 1 &rarr; 0 + 4 = 4 &rarr; 4 - 1 = 3 &rarr; <b>x = 3</b></div>
+      <div class = "respuesta">c) <code>x = ( 3 * 9 * ( 3 + ( 9 * 3 / ( 3 ) ) ) );</code><br>
+         9 * 3 = 27 &rarr; 27 / 3 = 9 &rarr; 3 + 9 = 12 &rarr; 3 * 9 = 27 &rarr; 27 * 12 = 324 &rarr; <b>x = 324</b></div>
+      <p>Comprobación con JavaScript:</p>
+      <script>
+         document.writeln( "<p>a) x = " + ( 7 + 3 * 6 / 2 - 1 ) + "</p>" );
+         document.writeln( "<p>b) x = " + ( 2 % 2 + 2 * 2 - 2 / 2 ) + "</p>" );
+         document.writeln( "<p>c) x = " + ( 3 * 9 * ( 3 + ( 9 * 3 / ( 3 ) ) ) ) + "</p>" );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

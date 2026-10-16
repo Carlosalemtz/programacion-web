@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 6.13: Ejercicio_6.13_ecuacion.html -->
+<!-- Instrucciones para y = ax³ + 7 -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 6.13 - Instrucciones para y = ax³ + 7</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 6.13: Instrucciones para y = ax³ + 7</h1>
+      <p class = "enunciado">Dada la ecuación y = ax<sup>3</sup> + 7, ¿cuáles de las siguientes instrucciones son correctas? (Se comprueba con a = 2 y x = 3, donde el valor correcto es 61).</p>
+      <table>
+         <tr><th>Inciso</th><th>Instrucción</th><th>Resultado</th><th>¿Correcta?</th></tr>
+         <tbody id = "tabla"></tbody>
+      </table>
+      <div class = "respuesta"><b>Correctas:</b> a), d) y e).</div>
+      <script>
+         var a = 2, x = 3;
+         var opciones = [
+            [ "a)", "y = a * x * x * x + 7;", a * x * x * x + 7 ],
+            [ "b)", "y = a * x * x * ( x + 7 );", a * x * x * ( x + 7 ) ],
+            [ "c)", "y = ( a * x ) * x * ( x + 7 );", ( a * x ) * x * ( x + 7 ) ],
+            [ "d)", "y = ( a * x ) * x * x + 7;", ( a * x ) * x * x + 7 ],
+            [ "e)", "y = a * ( x * x * x ) + 7;", a * ( x * x * x ) + 7 ],
+            [ "f)", "y = a * x * ( x * x + 7 );", a * x * ( x * x + 7 ) ] ];
+         var filas = "";
+         for ( var i = 0; i < opciones.length; ++i )
+            filas += "<tr><td>" + opciones[i][0] + "</td><td><code>" + opciones[i][1] +
+               "</code></td><td>" + opciones[i][2] + "</td><td>" +
+               ( opciones[i][2] == 61 ? "Sí" : "No" ) + "</td></tr>";
+         document.getElementById( "tabla" ).innerHTML = filas;
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 6.23: Ejercicio_6.23_positivos_negativos_ceros.html -->
+<!-- Negativos, positivos y ceros -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 6.23 - Negativos, positivos y ceros</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 6.23: Negativos, positivos y ceros</h1>
+      <p class = "enunciado">Reciba tres números y muestre la cantidad de números negativos, positivos y ceros introducidos.</p>
+
+      <script>
+         var negativos = 0, positivos = 0, ceros = 0;
+
+         var n1 = parseFloat( window.prompt( "Escriba el número 1", "0" ) );
+         var n2 = parseFloat( window.prompt( "Escriba el número 2", "0" ) );
+         var n3 = parseFloat( window.prompt( "Escriba el número 3", "0" ) );
+
+         if ( n1 < 0 ) negativos = negativos + 1;
+         if ( n1 > 0 ) positivos = positivos + 1;
+         if ( n1 == 0 ) ceros = ceros + 1;
+
+         if ( n2 < 0 ) negativos = negativos + 1;
+         if ( n2 > 0 ) positivos = positivos + 1;
+         if ( n2 == 0 ) ceros = ceros + 1;
+
+         if ( n3 < 0 ) negativos = negativos + 1;
+         if ( n3 > 0 ) positivos = positivos + 1;
+         if ( n3 == 0 ) ceros = ceros + 1;
+
+         document.writeln( "<p>Números: " + n1 + ", " + n2 + ", " + n3 + "</p>" );
+         document.writeln( "<table><tr><th>Negativos</th><th>Positivos</th><th>Ceros</th></tr>" );
+         document.writeln( "<tr><td>" + negativos + "</td><td>" + positivos +
+            "</td><td>" + ceros + "</td></tr></table>" );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>
