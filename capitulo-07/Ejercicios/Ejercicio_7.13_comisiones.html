@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 7.13: Ejercicio_7.13_comisiones.html -->
+<!-- Comisiones de vendedores -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 7.13 - Comisiones de vendedores</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 7.13: Comisiones de vendedores</h1>
+      <p class = "enunciado">Los vendedores reciben $200 por semana más el 9% de sus ventas brutas. Reciba los artículos vendidos (número de artículo y cantidad) y muestre los ingresos del vendedor. Artículos: 1 = $239.99, 2 = $129.75, 3 = $99.95, 4 = $350.89. Escriba -1 para terminar.</p>
+      <table>
+         <tr><th>Artículo</th><th>Valor</th></tr>
+         <tr><td>1</td><td>239.99</td></tr><tr><td>2</td><td>129.75</td></tr>
+         <tr><td>3</td><td>99.95</td></tr><tr><td>4</td><td>350.89</td></tr>
+      </table>
+      <script>
+         var ventas = 0;
+         var articulo, cantidad;
+
+         articulo = parseInt( window.prompt( "Número de artículo vendido (1-4, -1 para terminar):", "-1" ) );
+
+         while ( articulo != -1 )
+         {
+            cantidad = parseInt( window.prompt( "Cantidad vendida del artículo " + articulo + ":", "1" ) );
+
+            if ( articulo == 1 )
+               ventas += cantidad * 239.99;
+            else if ( articulo == 2 )
+               ventas += cantidad * 129.75;
+            else if ( articulo == 3 )
+               ventas += cantidad * 99.95;
+            else if ( articulo == 4 )
+               ventas += cantidad * 350.89;
+            else
+               window.alert( "Artículo inválido" );
+
+            articulo = parseInt( window.prompt( "Número de artículo vendido (1-4, -1 para terminar):", "-1" ) );
+         } // fin de while
+
+         document.writeln( "<p>Ventas brutas: $" + ventas.toFixed( 2 ) + "</p>" );
+         document.writeln( "<h2>Ingresos del vendedor: $" + ( 200 + ventas * 0.09 ).toFixed( 2 ) + "</h2>" );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

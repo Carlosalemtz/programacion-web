@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 7.18: Ejercicio_7.18_secuencia_misteriosa.html -->
+<!-- Secuencia de comandos misteriosa (filas y columnas) -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 7.18 - Secuencia de comandos misteriosa (filas y columnas)</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 7.18: Secuencia de comandos misteriosa (filas y columnas)</h1>
+      <p class = "enunciado">Sin ejecutarla, determine lo que imprime la secuencia de comandos.</p>
+      <pre>var fila = 10;
+var columna;
+
+while ( fila &gt;= 1 )
+{
+   columna = 1;
+   document.writeln( "&lt;p&gt;" );
+
+   while ( columna &lt;= 10 )
+   {
+      document.write( fila % 2 == 1 ? "&lt;" : "&gt;" );
+      ++columna;
+   } // fin de while
+
+   --fila;
+   document.writeln( "&lt;/p&gt;" );
+} // fin de while</pre>
+      <div class = "respuesta"><b>Respuesta:</b> imprime 10 líneas de 10 caracteres cada una. Las filas pares (10, 8, 6, 4, 2) muestran <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> y las impares (9, 7, 5, 3, 1) muestran <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, alternándose, empezando con <code>&gt;</code>.</div>
+      <p><b>Ejecución:</b></p>
+      <script>
+         var fila = 10;
+         var columna;
+
+         while ( fila >= 1 )
+         {
+            columna = 1;
+            document.writeln( "<p style = 'font-family: monospace; margin: 0'>" );
+
+            while ( columna <= 10 )
+            {
+               document.write( fila % 2 == 1 ? "&lt;" : "&gt;" );
+               ++columna;
+            } // fin de while
+
+            --fila;
+            document.writeln( "</p>" );
+         } // fin de while
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

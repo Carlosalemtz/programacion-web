@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 7.17: Ejercicio_7.17_dos_mayores.html -->
+<!-- Los dos valores más grandes -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 7.17 - Los dos valores más grandes</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 7.17: Los dos valores más grandes</h1>
+      <p class = "enunciado">Encuentre los dos valores más grandes de los 10 números introducidos (cada número se introduce sólo una vez).</p>
+
+      <script>
+         var contador = 1;
+         var numero;
+         var mayor = -Infinity;
+         var segundoMayor = -Infinity;
+
+         while ( contador <= 10 )
+         {
+            numero = parseInt( window.prompt( "Escriba el número " + contador + ":", "0" ) );
+
+            if ( numero > mayor )
+            {
+               segundoMayor = mayor;
+               mayor = numero;
+            }
+            else if ( numero > segundoMayor )
+               segundoMayor = numero;
+
+            ++contador;
+         } // fin de while
+
+         document.writeln( "<h2>El mayor es " + mayor + "</h2>" );
+         document.writeln( "<h2>El segundo mayor es " + segundoMayor + "</h2>" );
+      </script>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>

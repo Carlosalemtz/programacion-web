@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!-- Ejercicio 7.9: Ejercicio_7.9_corregir_errores.html -->
+<!-- Identificar y corregir errores -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 7.9 - Identificar y corregir errores</title>
+      <style type = "text/css">
+      body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; line-height: 1.5; color: #222; }
+      h1 { color: #1f3c88; font-size: 1.6em; margin-bottom: 4px; }
+      .enunciado { background: #eef3ff; border-left: 5px solid #1f3c88; padding: 10px 14px; margin: 10px 0 18px; }
+      .respuesta { background: #f6fff2; border-left: 5px solid #2e8b57; padding: 8px 14px; margin: 8px 0; }
+      code, pre { font-family: Consolas, "Courier New", monospace; background: #f4f4f4; }
+      pre { padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+      table { border-collapse: collapse; margin: 10px 0; }
+      th, td { border: 1px solid #999; padding: 4px 12px; }
+      th { background: #1f3c88; color: white; }
+      input, button { font-size: 1em; padding: 4px 8px; margin: 4px 2px; }
+      a.regresar { display: inline-block; margin-top: 20px; }
+
+      </style>
+   </head>
+   <body>
+      <h1>Ejercicio 7.9: Identificar y corregir errores</h1>
+      <p class = "enunciado">Identifique y corrija los errores en cada uno de los siguientes segmentos de código.</p>
+      <h3>a)</h3>
+      <pre>if ( edad &gt;= 65 );
+   document.writeln( "Edad es mayor o igual que 65" );
+else
+   document.writeln( "Edad es menor que 65 )";</pre>
+      <div class = "respuesta"><b>Errores:</b> el punto y coma después de la condición del <code>if</code> (termina el if con una instrucción vacía y el <code>else</code> queda sin if); en el último <code>writeln</code> la comilla de cierre está después del paréntesis.
+      <pre>if ( edad &gt;= 65 )
+   document.writeln( "Edad es mayor o igual que 65" );
+else
+   document.writeln( "Edad es menor que 65" );</pre></div>
+
+      <h3>b)</h3>
+      <pre>var x = 1, total;
+while ( x &lt;= 10 )
+{
+   total += x;
+   ++x;
+}</pre>
+      <div class = "respuesta"><b>Error:</b> <code>total</code> no se inicializa, por lo que el resultado es <code>NaN</code>.
+      <pre>var x = 1, total = 0;
+while ( x &lt;= 10 )
+{
+   total += x;
+   ++x;
+}</pre></div>
+
+      <h3>c)</h3>
+      <pre>var x = 1;
+var total = 0;
+while ( x &lt;= 100 )
+   total += x;
+   ++x;</pre>
+      <div class = "respuesta"><b>Error:</b> faltan las llaves del cuerpo del <code>while</code>; <code>++x</code> nunca se ejecuta dentro del ciclo y se produce un ciclo infinito.
+      <pre>while ( x &lt;= 100 )
+{
+   total += x;
+   ++x;
+}</pre></div>
+
+      <h3>d)</h3>
+      <pre>var y = 5;
+while ( y &gt; 0 )
+{
+   document.writeln( y );
+   ++y;</pre>
+      <div class = "respuesta"><b>Errores:</b> la variable de control se incrementa en lugar de decrementarse (ciclo infinito) y falta la llave derecha de cierre.
+      <pre>var y = 5;
+while ( y &gt; 0 )
+{
+   document.writeln( y );
+   --y;
+}</pre></div>
+      <p><a class = "regresar" href = "../index.html">&larr; Regresar al índice</a></p>
+   </body>
+</html>
